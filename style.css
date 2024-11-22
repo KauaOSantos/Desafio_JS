@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    background-color: #ccc;
+}
+label {
+    display: block;
+}
+input {
+    display: block;
+}
+.mudarCss {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-gap: 30px;
+    padding: 30px;
+}
+#controler {
+    font-size: .875rem;
+    background: #eee;
+    padding: 1rem;
+    border-radius: 4px;
+    /* box-shadow: ; */
+}
