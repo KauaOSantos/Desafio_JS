@@ -14,10 +14,10 @@ input {
     grid-gap: 30px;
     padding: 30px;
 }
-#controler {
+#controle {
     font-size: .875rem;
     background: #eee;
     padding: 1rem;
     border-radius: 4px;
-    /* box-shadow: ; */
+    box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.1);
 }

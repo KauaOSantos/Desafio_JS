@@ -1,60 +1,56 @@
 
-const btn = document1.querySelector('.btn');
+const btn = document.querySelector('.btn');
 const controle = document.getElementById('controle');
 
 controle.addEventListener('change',pegouMudança);
 
 const funcoes = {
-    Texto(valor) {
+    text(valor) {
         btn.innerText = valor;
-        return btn.innerText
     },
-    Color(valor) {
+    color(valor) {
         btn.style.color = valor;
     },
-    BackgroundColor(valor) {
-        btn.style.BackgroundColor= valor;
+    backgroundColor(valor) {
+        btn.style.backgroundColor = valor;
     },
-    Height(valor) {
-        btn.style.Height = valor + 'px';
+    height(valor) {
+        btn.style.height = valor + 'px';
     },
-    Width(valor) {
-        btn.style.Width  = valor + 'px';
+    width(valor) {
+        btn.style.width  = valor + 'px';
     },
-    Border(valor) {
-        btn.style.Border = valor;
+    border(valor) {
+        btn.style.border = valor;
     },
-    BorderRadius(valor) {
-        btn.style.BorderRadius = valor + 'px';
+    borderRadius(valor) {
+        btn.style.borderRadius = valor + 'px';
     },
     fontFamily(valor) {
-        btn.style.fontFamily = valor ;
+        btn.style.fontFamily = valor;
     },
-    FontSize(valor) {
-        btn.style.FontSize = valor +'px' ;
-    }
-}
+    fontSize(valor) {
+        btn.style.fontSize = valor +'px';
+    },
+};
 
 function pegouMudanca(event) {
-
     const valor = event.target.value;
-    const nome = event.target.name;
-    funcoes[nome][valor];
-    colocarStorage(nome,valor);
+    const name = event.target.name;
+    funcoes[name](valor);
+    colocarStorage(name,valor);
 }
 
-function colocarStorage(nome,valor) {
-
-    localStorage[nome] = valor;
+function colocarStorage(name,valor) {
+    localStorage[name] = valor;
 }
 
- colocarCss();
+colocarCss();
 
- function colocarCss() {
+function colocarCss() {
+    const variavelLocal = Object.keys(localStorage);
 
-    const variaveisLocal = Object.keys(localStorage);
-
-    variaveisLocal.forEach(function(variavelAtual){
+    variavelLocal.forEach(function(variavelAtual){
         funcoes[variavelAtual](localStorage[variavelAtual])
     })
 };
