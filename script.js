@@ -2,7 +2,7 @@
 const btn = document.querySelector('.btn');
 const controle = document.getElementById('controle');
 
-controle.addEventListener('change',pegouMudança);
+controle.addEventListener('change',pegouMudanca);
 
 const funcoes = {
     text(valor) {
